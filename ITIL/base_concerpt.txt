@@ -55,7 +55,66 @@ Service Level Agreement: Service based, Customer based, Miti-level(Coperate, Cus
 Operation Level Agreement
 Underpinning Contract
 
-Transition
+
+Service Level Management
+6 stages
+1. SLA Preparation and Agreement
+2. Service Level Monitoring
+3. Service Level Reporting
+4. Service Improvement Program Planning
+6. SLA Maintenance
+
+Defining SLA
+Baseline SLA
+Document the Service
+SLA Model(Reward only, Risk only)
+
+Service Credit, Earn back
+Service Default
+
+Availability Management
+2 Techniques: Proactive, Reactive\
+2 Aspects: Service Availability, Component Availability
+7 Rs: Redundancy, Reputation, Realiability, Reparability, Recoverability, Responsiveness, Robustness 
+
+AST: Agree Service Time
+DT: Down Time
+Uptime/MTBF: Mean Time Between Failure
+Downtime/MTTR: Mean Time To Repair
+
+Capacity Management Process
+Capacity Planning
+Sever Capacity Planning
+Steps: Determine Service Level Requirement, Analyze current capacity, Plan for the future
+KPI:
+
+Capacity Balance Act: Cost vs Capacity, 
+sub-process: Service Capacity Management, Component Capacity Management, Business Capacity Management
+
+IT Service Continuity Management
+Factors disrupt business
+DR: Dizarster Recovery
+ITSCM Life Cycle: Initiation, Requirement & Strategy, Implemetation, Operational Activities, 
+BCP-Business Continuity Plan
+
+Service Catalog Management
+Business Catalog, Technical Catalog
+
+Service Supplier Management
+Supplier & Contract Database
+
+
+Information Security Management
+CIA-Confidentiality, Integrity, Availability
+Break down into: policy, process, procedure, work instruction
+
+Service Transition Process
+Transition Planning and Support
+
+
+
+
+ransition
 Change Evaluation, Service Validation and Testing, Release and Deployment Management, Change Management
 
 Operation
