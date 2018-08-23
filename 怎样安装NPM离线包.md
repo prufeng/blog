@@ -23,7 +23,7 @@
 Install the package in the directory as a symlink in the current project. Its dependencies will be installed before it's linked. If <folder> sits inside the root of your project, its dependencies may be hoisted to the toplevel node_modules as they would for other types of dependencies.
 ```
 
-### 一定要npm install？
+## 一定要npm install？
 不是放到node_modules下就可以？为什么还要npm install？   
 除了更新package.json，刚好我用来试的是express-generator。如果只是放到<nodejs_root>/node_modules文件夹下，express命令行不可用。   
 npm install后，<nodejs_root>下出现express和express.cmd，命令可用。  
