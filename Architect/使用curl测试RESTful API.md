@@ -17,7 +17,7 @@ curl -v -X GET localhost:3000/users/1
 ## 2. POST
 curl -v -d "id=1&name=user1&age=18" localhost:3000/users
 
-Note: Unnecessary use of -X or --request, POST is already inferred.
+Note: Unnecessary use of -X or --request, POST is already inferred.    
 curl -v -X POST -d "id=1&name=user1&age=18" localhost:3000/users
 
 curl -v -H "Content-type: application/json" -X POST -d '{"id":"1","name":"user1", "age": "19"}' localhost:3000/users
