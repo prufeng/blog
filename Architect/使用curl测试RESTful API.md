@@ -1,4 +1,4 @@
-发现git bash里curl命令也可以用，挺方便的，可以用来简单测试RESTful API。
+发现git bash里curl命令也可以用，无需安装其他工具就可以用来简单测试RESTful API，非常方便。
 
 ## 1. GET
 curl localhost:3000
