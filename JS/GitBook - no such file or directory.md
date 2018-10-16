@@ -8,11 +8,13 @@ https://github.com/GitbookIO/gitbook/issues/1309
 
 解决办法如下。
 
+用户目录下找到以下文件。
 \<user>\\.gitbook\versions\3.2.3\lib\output\website\copyPluginAssets.js
 
-confirm: true
-
-confirm: false
+Replace all   
+`confirm: true`   
+with   
+`confirm: false`
 
 
 
