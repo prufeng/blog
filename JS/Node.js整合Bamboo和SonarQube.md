@@ -58,7 +58,7 @@ npm i -D mocha-bamboo-reporter
 
 ![clover](assets/clover.PNG)
 
-# 5. +SonarQube
+# 5. Bamboo+SonarQube
 ## 5.1 Clover Not Support?
 Bamboo和Node.js整合完成后，已经可以在Bamboo上看到Unit Test的结果和Code Coverage报告，但是Sonar Coverage始终为0，表明该结果还没有被Sonar读取。
 ```
@@ -86,7 +86,7 @@ https://docs.sonarqube.org/display/SONAR/Analysis+Parameters
 //package.json
 "lcov": "nyc report --reporter=lcovonly"
 ```
-Bamboo上添加相应task生成lcov report，即运行一下命令。
+Bamboo上添加相应task生成lcov report，即运行以下命令。
 
 ```
 npm run-script lcov
