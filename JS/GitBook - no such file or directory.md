@@ -1,6 +1,6 @@
 换一台电脑打开GitBook项目居然有错。
 
-Error: ENOENT: no such file or directory, stat 'C:\***demo_book\_book\gitbook\gitbook-plugin-fontsettings\fontsettings.js'
+Error: ENOENT: no such file or directory, stat 'C:\***demo_book\\_book\gitbook\gitbook-plugin-fontsettings\fontsettings.js'
 
 原来是一个Bug（Vesion：3.2.3）。
 
