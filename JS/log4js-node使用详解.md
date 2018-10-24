@@ -1,6 +1,6 @@
 log4js-node是log4js的Node.js版本。
 
-log4js-node的使用比较简单，以下内容主要来自官方文档。
+log4js-node的使用比较简单，以下内容主要部分来自官方文档。
 
 https://github.com/log4js-node/log4js-node
 
