@@ -39,6 +39,7 @@ Works without ts-node from my test, not see any difference in the report.
 
 # SonarQube
 ## Install SonarQube Plugin - SonarTS
+https://docs.sonarqube.org/display/PLUG/SonarTS
 
 ## sonar.properties
 ```
