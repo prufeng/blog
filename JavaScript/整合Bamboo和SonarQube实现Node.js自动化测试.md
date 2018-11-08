@@ -1,4 +1,4 @@
-Node.js Bamboo and SonarQube Integration
+整合Bamboo和SonarQube实现Node.js自动化测试
 ====
 # 1. Bamboo Node.js Plugin
 ## 1.1 安装Node.js插件
@@ -32,7 +32,7 @@ https://confluence.atlassian.com/bamboo/getting-started-with-node-js-and-bamboo-
 https://confluence.atlassian.com/bamboo/configuring-tasks-289277036.html
 
 # 3. Bamboo+Mocha+Istanbul
-程序部分可参考：[Node.js自动化测试(Mocha+Istanbul)](https://blog.csdn.net/prufeng/article/details/83043246)
+程序部分可参考：[使用Mocha和Istanbul实现Node.js单元测试和覆盖率](https://blog.csdn.net/prufeng/article/details/83043246)
 
 为了整合Bamboo和Mocha，需要以下插件。  
 ```bash
