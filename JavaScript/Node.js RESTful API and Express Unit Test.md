@@ -1,6 +1,6 @@
 Node.js RESTful API和Express单元测试
 ====
-本文主要研究Node.js RESTful API和Express框架的测试。
+本文主要研究Node.js RESTful API和Express框架的单元测试。
 
 关于Mocha和Istanbul的详细使用，请参考：[使用Mocha和Istanbul实现Node.js单元测试和覆盖率](https://blog.csdn.net/prufeng/article/details/83043246)
 
