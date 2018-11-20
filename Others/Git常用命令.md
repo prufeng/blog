@@ -49,12 +49,12 @@ git add .
 git commit --amend
 ```
 
-### Add Some Change in <file>
+### Add Some Change in File
 ```
 git add -p <file>
 ```
 
-### Discard changes in <file>
+### Discard changes in File
 ```
 git checkout <file>
 ```
@@ -70,12 +70,12 @@ git reset HEAD~
 git reset HEAD~1
 git reset <commit id> <--soft|mixed|hard>
 ```
-### Remove <file>
+### Remove File
 ```
 git rm --cached <file>
 ```
 
-### Remove <file> from last commit
+### Remove File from last commit
 ```
 git checkout HEAD~ <file>
 git add .
