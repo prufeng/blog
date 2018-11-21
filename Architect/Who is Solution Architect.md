@@ -16,7 +16,7 @@ Who is Solution Architect: Processes, Role Description, Responsibilities, and Ou
 
 解决方案架构是设计，描述和管理特定业务问题解决方案工程的实践。
 
-解决方案架构师是负责领导这种实践，并介绍特定解决方案的整体技术愿景的人。
+解决方案架构师是负责领导这种实践，并介绍特定解决方案整体技术愿景的人。
 
 虽然可以在内部进行管理，但也有公司提供解决方案架构咨询的服务。
 
