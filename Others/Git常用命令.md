@@ -1,4 +1,4 @@
-## Clone
+### Clone
 ```bash
 git clone https://github.com/prufeng/hellowork.git
 
@@ -8,7 +8,7 @@ git remote remove origin
 git remote add origin https://github.com/prufeng/hellowork.git
 ```
 
-## Store/Unset Password
+### Store/Unset Password
 ```
 git config --global credential.helper store
 git config --global --unset credential.helper
@@ -133,4 +133,13 @@ git reset --hard <commit id>
 ### Fallback Rebase and Merge
 ```
 git reset --hard ORIG_HEAD
+```
+### New Branch Without Local Changes
+```
+git checkout -b current_feature
+git add .
+git commit -m "Add current feature"
+
+git checkout master
+git checkout -b new_feature_without_current_feature
 ```
