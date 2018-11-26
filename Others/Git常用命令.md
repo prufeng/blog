@@ -58,6 +58,7 @@ git add -p <file>
 ### Discard changes in File
 ```
 git checkout <file>
+git checkout HEAD <file>
 ```
 
 ### Undo Add
@@ -143,4 +144,11 @@ git commit -m "Add current feature"
 
 git checkout master
 git checkout -b new_feature_without_current_feature
+```
+
+### Push Commit from New Branch
+```
+git checkout new_feature_without_current_feature   
+git cherry-pick <commit id>
+git push origin HEAD:master
 ```
