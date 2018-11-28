@@ -71,9 +71,12 @@ log2file.error('hello world');
 ```
 
 # express-bunyan-logger
+## Install
 ```
 npm i express-bunyan-logger
 ```
+
+## 测试代码
 ```javascript
 //app.js
 app.use(require('express-bunyan-logger')(require('./demo/bunyan').express));
@@ -91,6 +94,8 @@ var express = {
     ]
 };
 ```
+
+## 输出
 ```bash
 {"name":"bunyan-express","hostname":"PC70358896","pid":16780,"req_id":"5fe2acbb-7441-4480-929d-c54351424ead","level":40,"remote-address":"::ffff:127.0.0.1","ip":"::ffff:127.0.0.1","method":"GET","url":"/wrongUrl","referer":"-","user-agent":{"family":"Other","major":"0","minor":"0","patch":"0","device":{"family":"Other","major":"0","minor":"0","patch":"0"},"os":{"family":"Other","major":"0","minor":"0","patch":"0"}},"body":{},"short-body":"{}","http-version":"1.1","response-time":11.590723,"response-hrtime":[0,11590723],"status-code":404,"req-headers":{"host":"127.0.0.1:54929","accept-encoding":"gzip, deflate","user-agent":"node-superagent/3.8.3","connection":"close"},"res-headers":{"x-powered-by":"Express","content-type":"text/html; charset=utf-8","content-length":"2483","etag":"W/\"9b3-3MaH2Djfdd7bcNOKTO1QCw+mCBs\""},"req":{"method":"GET","url":"/wrongUrl","headers":{"host":"127.0.0.1:54929","accept-encoding":"gzip, deflate","user-agent":"node-superagent/3.8.3","connection":"close"},"remoteAddress":"::ffff:127.0.0.1","remotePort":54930},"res":{"statusCode":404,"header":"HTTP/1.1 404 Not Found\r\nX-Powered-By: Express\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: 2483\r\nETag: W/\"9b3-3MaH2Djfdd7bcNOKTO1QCw+mCBs\"\r\nDate: Tue, 27 Nov 2018 07:49:47 GMT\r\nConnection: close\r\n\r\n"},"incoming":"<--","msg":"::ffff:127.0.0.1 - 0","time":"2018-11-27T07:49:47.582Z","v":0}
 ```
