@@ -31,14 +31,21 @@ git push
 ### Status
 ```
 git status
+git status -s
+```
+
+### List Changed Files in Commit
+```
+git show --name-only --oneline HEAD
+git show --stat --oneline HEAD
+
+git log --stat --oneline HEAD
+git log --name-only --oneline -2
+git diff-tree --name-only -r <commit id>
 ```
 
 ### Amend
 ```
-git log -1
-git show
-git log -1 -p
-
 git commit --amend --only
 git commit --amend --only -m 'xxxxxxx'
 git commit --amend --author "New Authorname <authoremail@mydomain.com>"
@@ -77,12 +84,13 @@ git reset <commit id> <--soft|mixed|hard>
 git rm --cached <file>
 ```
 
-### Remove File from last commit
+### Remove File from Last Commit
 ```
 git checkout HEAD~ <file>
 git add .
 git commit --amend
 ```
+
 ### Find back Hard Reset
 ```
 git reflog -2
