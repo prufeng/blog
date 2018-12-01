@@ -2,6 +2,9 @@ Bunyan将Node.js日志输出为JSON
 ===
 日志应该是结构化的，处理日志的主要应该是机器而不是人，这就是日志输出为JSON的好处，而Bunyan即是一个简单快速的JSON日志库。
 
+正式Demo可参考Github：     
+https://github.com/prufeng/autotest-node/tree/master/demo
+
 # Install
 ```
 npm install bunyan
@@ -79,7 +82,7 @@ npm i express-bunyan-logger
 ## 测试代码
 ```javascript
 //app.js
-app.use(require('express-bunyan-logger')(require('./demo/bunyan').express));
+app.use(require('express-bunyan-logger')(express));
 
 var express = {
     name: 'bunyan-express',
