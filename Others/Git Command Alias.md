@@ -3,7 +3,7 @@ Git Command Alias
 这段时间在用命令行，忘记哪里抄了一份这样的Git快捷命令，也加了一些自定义部分，都习惯了，记录一下，防丢。
 
 ~/.bash_profile
-```
+```bash
 alias gpm='git push origin master'
 alias ...=../..
 alias ....=../../..
