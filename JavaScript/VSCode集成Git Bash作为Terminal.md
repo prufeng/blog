@@ -42,5 +42,4 @@ alias gss='git status -s'
 我主要使用该功能来建立[Git Command Alias](https://blog.csdn.net/prufeng/article/details/85001682)。
 
 # 参考
-https://code.visualstudio.
-com/docs/editor/integrated-terminal
+https://code.visualstudio.com/docs/editor/integrated-terminal
