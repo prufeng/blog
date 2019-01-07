@@ -71,6 +71,14 @@ After you have confirmed your service feedback is okay, you can right click `Vie
 jmeter -n -t my_test.jmx -l log.jtl
 ```
 
+Generate HTML report
+```
+jmeter.bat -n -t cms-restful-homepage.jmx -l log.jtl -e -o report
+```
+
+Report dashboard overview:
+
+https://jmeter.apache.org/usermanual/generating-dashboard.html
 
 # Test Strategy
 * Setup measurement baseline
