@@ -1,4 +1,4 @@
-How to Test Web Service Performance With Jmeter
+How to Test Web Service Performance With JMeter
 ===
 # Download & Install
 Download and unzip. Run bin/jmeter.bat, will see the UI to new test plan.
@@ -82,7 +82,7 @@ https://jmeter.apache.org/usermanual/generating-dashboard.html
 
 # Test Strategy
 * Setup measurement baseline
-* Integrate Jmeter Into CI Tool (Jenkins/Bamboo)
+* Integrate Jmeter Into CI Tool (Jenkins/Bamboo/SonarQube)
 * Create Test Plan for DEV, SIT and UAT
 
 ### Questions:
@@ -90,3 +90,6 @@ https://jmeter.apache.org/usermanual/generating-dashboard.html
 * Test one service or multiple services per run?
 * How many requests per service?
 * How many requests per second?
+* How to measure it is good or not?
+* When to run(trigger) the performance test?
+
