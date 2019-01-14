@@ -47,8 +47,7 @@ https://github.com/prufeng/autotest-node/blob/master/test/pam/stockfetch.spec.js
         stub.restore();
     });
 
-
-        it('read should invoke processTickers for valid file', function () {
+    it('read should invoke processTickers for valid file', function () {
         var rawData = '601169\n002146\n601009'
         var parsedData = ['601169', '002146', '601009'];
 
