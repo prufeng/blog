@@ -46,7 +46,7 @@ https://github.com/prufeng/autotest-node/blob/master/test/pam/stockfetch.spec.js
         stockFetch.readTickerFile('dummyInvalidFile', onError);
         stub.restore();
     });
-
+    
     it('read should invoke processTickers for valid file', function () {
         var rawData = '601169\n002146\n601009'
         var parsedData = ['601169', '002146', '601009'];
@@ -106,9 +106,11 @@ https://github.com/prufeng/autotest-node/blob/master/test/pam/stockfetch.spec.js
 此即没有真正用到但又需要填充的情形。建议起个好点的名字，最好一目了然。
 
 ## Stub
+Stub并不是真正的实现，主要用来在调用时快速返回预设数据。
+
 Stub相当于把目标替换了，原本的方法不会再执行。
 
-通常可以使用Stub控制程序的行为，使得我们可以一次只测试一个我们关心的特定路径，实现代码隔离。
+通常使用Stub来预设依赖数据，控制程序的行为，使得我们可以一次只测试一个我们关心的特定路径，实现代码隔离。
 
 比如`fs.readFile`的Stub，使得程序无需真正地进行文件操作，同时可以赋予不同的返回数据，分别测试（定义）了目标方法在读文件出错，读正常文件和读空文件情形下的行为。
 
@@ -117,12 +119,11 @@ Stub `parseTickers`和`processTickers`，则使得该Test Case可以专注于测
 在TDD（Test Driven Development）过程中，使用Stub可以帮助我们在后续程序还没实现的情况下，先验证和完成目标功能。
 
 ## Fake
-Fake是用一个简单的假的实现，来代替实际目标程序。
+Fake是用一个假的实现，来代替实际目标程序，该实现只适用于测试环境而不能用于生产环境。
 
 上例的`onError`即是Fake的，只用来验证返回的错误信息。
 
 另外Stub后面的`callFake`也是相同用法，虽然Stub了，但是也提供一个Fake的实现，写了些简单的代码来顺便验证它接收到的参数是不是我们所期望的。
-
 
 Sinon里另外提供fake方法,结合了Spy和Stub的概念。
 ```javascript
@@ -133,17 +134,18 @@ console.log('apple pie');
 ```
 
 ## Mock
-Mock主要是验证程序行为有没有按照我们预定的路径发生。
+Mock主要是验证程序行为有没有按照我们预定的路径发生，它也可以返回预设数据，同时可以对交互进行跟踪，如调用的次数，调用的顺序。
 
 比如`processTickers`的Test Case验证了`'processTickers should call getPrice for each ticker symbol'`。
 
 数组参数的每个元素都会作为`getPrice`的参数调用一次。如果任何一个预期没有发生，测试会失败。
 
 ## Spy
-Sinon里的Spy是其他技术实现的基础，实际上是通过代理来获取目标的被调用情况，如被调用了几次，使用什么参数。
+Spy实际上是通过代理来获取目标的被调用情况，如被调用了几次，使用什么参数。
 
-上面Spy的Test Case是我参照Mock的例子写出来的，同样验证了数组参数被`getPrice`调用的情形，而且是按顺序调用。
+Spy可以与真实的服务进行交互，对交互进行验证或部分模拟。
+
+上面Spy的Test Case是参照Mock的例子写出来的，同样验证了数组参数被`getPrice`调用的情形，而且是按顺序调用。
 
 # 参考
 https://sinonjs.org/   
-https://github.com/prufeng/autotest-node
