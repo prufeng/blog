@@ -26,7 +26,7 @@ JavaScript实在是神通广大，虽然写了很多年，一些简单的代码�
 * 对象
 * 数组
 
-非空字符串包括空格（`' '`），`'false'`。
+非空字符串包括空格（`' '`），`'false'`，`'0'`。
 
 空对象和空数组都返回true。
 
@@ -55,6 +55,8 @@ JavaScript实在是神通广大，虽然写了很多年，一些简单的代码�
         tt = 'true';
         func(tt);
         tt = 'false';
+        func(tt);
+        tt = '0';
         func(tt);
         tt = '';
         func(tt);
