@@ -25,9 +25,11 @@ Signature是加密的，接收方主要是靠这一部分进行验证。
 
 防篡改的特性使得JWT可以用来传递用户身份信息，达到服务状态保持，从而实现单点登录。
 
-* Client请求授权
-* Authorization Server返回access token
-* Client使用access token去访问其他服务（资源）
+具体过程如下：
+
+1. Client请求授权
+2. Authorization Server返回access token
+3. Client使用access token去访问其他服务（资源）
 
 ![](assets/client-credentials-grant.png)
 
