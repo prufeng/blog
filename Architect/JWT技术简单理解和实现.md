@@ -61,7 +61,9 @@ jwt.verify(token, cert, function(err, decoded) {
 });
 ```
 * Decode Payload
+
 无须签名，就可以解码Header和Payload，所以千万不要误以为它们是加密的。
+
 ```js
 // get the decoded payload ignoring signature, no secretOrPrivateKey needed
 var decoded = jwt.decode(token);
