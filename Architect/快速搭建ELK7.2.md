@@ -1,7 +1,7 @@
 快速搭建ELK（7.2.0）
 ===
-真正用ELK，才发现ELK的文档那么多，眼花缭乱。
-也难怪，每一个单独起来也都是挺好的小工具。
+真正用ELK，才发现ELK的文档那么多，眼花缭乱。   
+也难怪，每一个单独起来也都是挺好的小工具。   
 有必要稍微梳理一下。
 # Elastic Stack
 - Beats
@@ -12,6 +12,7 @@
 Elasticsearch是核心搜索引擎，用于数据缓存、搜索和分析。
 
 Beats是轻量级的数据采集器，有很多种，按需取用。
+
 |Elastic Beats|To capture|
 |-|-|
 |Auditbeat|Audit data|
