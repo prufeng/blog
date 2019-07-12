@@ -46,11 +46,9 @@ Beats也可以直接发数据给ElasticSearch，但经Logstash可以先进行一
 * kibana-7.2.0-linux-x86_64.tar.gz
 * logstash-7.2.0.tar.gz
 
-
 要monitor log files，则装Filebeat。
 
 https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-elastic-stack.html
-
 
 ## Elasticsearch
 直接启动会遇到如下错误。
@@ -123,7 +121,6 @@ cluster.initial_master_nodes: ["node-1"]
 ```
 
 * 开Linux端口
-
 ```
 firewall-cmd --zone=public --add-port=9200/tcp --permanent
 firewall-cmd --reload
@@ -137,7 +134,6 @@ curl 10.119.61.108:9200
 ```
 
 ## Kibana
-
 ### 远程访问Kibana
 Kibana是UI，远程访问肯定要开。
 
@@ -170,21 +166,18 @@ logging.dest = /opt/elk/kibana-7.2.0-linux-x86_64/logs/
 ### Kibana Startup
 ```
 cd /opt/elk/kibana-7.2.0-linux-x86_64
-sudo -u elkusr nohup ./bin/kibana>kb.log 2>&1 &
+sudo -u elkusr nohup ./bin/kibana &
 
-ps -ef|grep src/cli
+ps -ef|grep node
 tail -f /opt/elk/kibana-7.2.0-linux-x86_64/logs/kibana.log
-
 ```
 
 http://appserver1:5601/
 
 ## Filebeat
-
 以下配置顺便以Kibana的日志来测试，输出到Logstash。
-
 ```
-vi filebeat-7.2.0-linux-x86_64/filebeat.yml
+vi /opt/elk/filebeat-7.2.0-linux-x86_64/filebeat.yml
 filebeat.inputs:
 - type: log
   enabled: true
@@ -196,17 +189,16 @@ filebeat.inputs:
 output.logstash:
   hosts: ["127.0.0.1:5044"]
 
-nohup ./filebeat -e > fb.log 2>&1 &
+cd /opt/elk/filebeat-7.2.0-linux-x86_64
+sudo -u elkusr nohup ./filebeat -e &
 ```
 
 ## Logstash
 Logstash接收Filebeat输入，然后输出到Elasticsearch。   
-这里直接copy logstash-sample.conf，顺便也换了个index名。
+这里直接用logstash-sample.conf。
 ```
-cd /opt/elk/logstash-7.2.0/config
-cp logstash-sample.conf logstash-test.conf
+vi /opt/elk/logstash-7.2.0/config/logstash-sample.conf
 
-vi logstash-test.conf
 # Sample Logstash configuration for creating a simple
 # Beats -> Logstash -> Elasticsearch pipeline.
 
@@ -219,17 +211,18 @@ input {
 output {
   elasticsearch {
     hosts => ["http://localhost:9200"]
-    index => "logstash-%{+YYYY.MM.dd}"
-    #"%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"
+    index => "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"
     #user => "elastic"
     #password => "changeme"
   }
 }
 
-cd ..
-nohup ./bin/logstash -f ./config/logstash-test.conf >logstash.log 2>&1 &
-
+cd /opt/elk/logstash-7.2.0/
+sudo -u elkusr nohup ./bin/logstash -f ./config/logstash-sample.conf --config.reload.automatic &
 ```
 
+# 验证
+打开http://10.119.61.108:5601/.  
 
-
+找到Management -> Index Management，可以看到新的index：filebeat-7.2.0-2019.07.10，说明数据已经成功输入Elasticsearch。
+![](assets/ELK_Verify.PNG)
