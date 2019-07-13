@@ -111,7 +111,7 @@ network.host: 0.0.0.0
 ```
 第一个是要提高最大线程数（max_map_count/2）。
 ```
-echo "vm.max_map_count=262144" > /etc/sysctl.conf
+echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 sysctl -p
 ```
 第二个是Elasticsearch7.0以后一些discovery相关默认配置改了，添加如下配置，重启。
