@@ -222,7 +222,7 @@ sudo -u elkusr nohup ./bin/logstash -f ./config/logstash-sample.conf --config.re
 ```
 
 # 验证
-打开http://10.119.61.108:5601/.  
+打开http://appserver1:5601/.  
 
 找到Management -> Index Management，可以看到新的index：filebeat-7.2.0-2019.07.11，说明数据已经成功输入Elasticsearch。
 ![](assets/ELK_Verify.PNG)
