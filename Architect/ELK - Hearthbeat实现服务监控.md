@@ -1,6 +1,6 @@
-ELK - Hearthbeat监控服务是否正常运行
+ELK - Hearthbeat实现服务监控
 ===
-Hearthbeat，心跳，顾名思义，Hearthbeat 可以用来定时探测服务是否正常运行。
+Hearthbeat，心跳，顾名思义，Hearthbeat可以用来定时探测服务是否正常运行。
 
 Hearthbeat支持ICMP、TCP 和 HTTP，也支持TLS、身份验证和代理。
 
