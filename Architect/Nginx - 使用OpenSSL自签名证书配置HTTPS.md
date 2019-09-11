@@ -44,8 +44,8 @@ sudo vi /usr/local/nginx/conf/nginx.conf
         listen       443 ssl;
         server_name  192.168.1.88;
 
-        ssl_certificate /user/local/nginx/cert/Cert.crt;
-        ssl_certificate_key /user/local/nginx/cert/Server.key;
+        ssl_certificate /usr/local/nginx/conf/Cert.crt;
+        ssl_certificate_key /usr/local/nginx/conf/Server.key;
 ```
 # 开443端口
 ```
