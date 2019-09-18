@@ -130,7 +130,7 @@ firewall-cmd --reload
 
 用浏览器打开则返回一个JSON。
 ```
-curl 10.119.61.108:9200
+curl appserver1:9200
 ```
 
 ## Kibana
