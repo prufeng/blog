@@ -29,6 +29,7 @@ sudo cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.bak
 sudo ls -l /usr/local/nginx/sbin/
 sudo cp ./objs/nginx /usr/local/nginx/sbin/
 ```
+（特别再试了一下，直接`sudo make install`也是可以的，并没有覆盖原有的配置文件。）
 
 重启
 ```
