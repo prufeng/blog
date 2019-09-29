@@ -1,5 +1,6 @@
-Nginx - LPAD Authentication
+Nginx - LDAP Authentication
 ===
+比[Nginx - Basic Authentication](https://blog.csdn.net/prufeng/article/details/100998041)稍微高级一点点的LDAP认证。
 
 # Install http_auth_request_module
 ```
