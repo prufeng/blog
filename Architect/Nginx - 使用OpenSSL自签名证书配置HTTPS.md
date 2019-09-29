@@ -24,7 +24,7 @@ openssl x509 -req -days 365 -in Cert.csr -signkey Server.key -out Cert.crt
 # Nginx SSL配置
 确保`http_ssl_module`已安装。
 
-否则会报错：[nginx: [emerg] the "ssl" parameter requires ngx_http_ssl_module]()
+否则会报错：[nginx: [emerg] the "ssl" parameter requires ngx_http_ssl_module](https://blog.csdn.net/prufeng/article/details/100998041)
 
 ```
 $ sudo nginx -V
