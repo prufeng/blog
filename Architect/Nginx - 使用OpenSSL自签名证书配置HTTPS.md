@@ -1,6 +1,6 @@
 Nginx - 使用OpenSSL自签名证书配置HTTPS
 ===
-#OpenSSL生成证书
+# OpenSSL生成证书
 * 创建Key
 * 创建签名请求（CSR）
 * 移除口令
