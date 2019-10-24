@@ -75,8 +75,28 @@ sudo systemctl start logstash.service
 sudo systemctl start filebeat.service
 sudo systemctl start heartbeat-elastic.service
 ```
+# Remote Access to Elasticsearch
+```
+sudo vi /etc/elasticsearch/elasticsearch.yml
+```
+```yml
+#network.host: 192.168.0.1
+network.host: 0.0.0.0
 
-# Enable Remote Access for Kibana
+cluster.initial_master_nodes: node-1
+```
+The last configure change is for bootstrap error below.
+```
+sudo tail  /var/log/elasticsearch/elasticsearch.log
+```
+```
+[2019-10-10T10:06:24,340][ERROR][o.e.b.Bootstrap          ] [appserver01] node validation exception
+[1] bootstrap checks failed
+[1]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
+```
+没有遇到[7.2解压版](https://blog.csdn.net/prufeng/article/details/95733467)里的`vm.max_map_count is too low`的问题。
+
+# Remote Access to Kibana
 ```sh
 # curl localhost:5601
 # curl localhost:5601/app/kibana
@@ -130,7 +150,7 @@ Failed to startup Elasticsearch with below error.
 java.lang.IllegalStateException: failed to obtain node locks, tried [[/var/lib/elasticsearch]] with lock id [0]; maybe these locations are not writable or multiple nodes were started without increasing [node.max_local_storage_nodes] (was [1])?
 
 ```
-Not work even after add nodes in configure.
+Not work even after nodes configure is updated as below.
 ```
 node.max_local_storage_nodes: 2
 ```
