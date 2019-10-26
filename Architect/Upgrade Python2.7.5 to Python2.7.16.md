@@ -1,6 +1,6 @@
 Upgrade Python2.7.5 to Python2.7.16
 ===
-Linux has already been installed Python by default, but the version is usually not up to date.
+Python has already been installed in Linux by default, but the version is usually not up to date.
 
 # Install Python 2.7.16
 Download from https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tgz
@@ -91,7 +91,7 @@ sudo ./configure --prefix=/usr/local
 sudo make
 sudo make altinstall
 ```
-# Python - ImportError: No module named _ssl
+# ImportError: No module named _ssl
 ```
 sudo yum install openssl-devel
 
