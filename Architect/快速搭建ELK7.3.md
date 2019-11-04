@@ -96,6 +96,16 @@ sudo tail  /var/log/elasticsearch/elasticsearch.log
 ```
 没有遇到[7.2解压版](https://blog.csdn.net/prufeng/article/details/95733467)里的`vm.max_map_count is too low`的问题。
 
+粗略看一下，它是放到启动的script里了。
+```
+sudo view /etc/init.d/elasticsearch
+
+MAX_OPEN_FILES=65535
+MAX_MAP_COUNT=262144
+
+sysctl -q -w vm.max_map_count=$MAX_MAP_COUNT
+```
+
 # Remote Access to Kibana
 ```sh
 # curl localhost:5601
