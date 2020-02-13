@@ -57,3 +57,7 @@ server.ssl.enabled: true
 server.ssl.certificate: /etc/kibana/server.crt
 server.ssl.key: /etc/kibana/server.key
 ```
+
+# 相关文章
+
+[Nginx - 使用OpenSSL自签名证书配置HTTPS](https://blog.csdn.net/prufeng/article/details/102291147)
