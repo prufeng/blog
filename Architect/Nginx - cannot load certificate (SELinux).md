@@ -1,11 +1,9 @@
-Nginx - cannot load certificate SSL: error:0200100D:system library:fopen:Permission denied:fopen
+nginx: [emerg] cannot load certificate SSL: error:0200100D:system library:fopen:Permission denied:fopen
 ===
 
 换了SSL Cert之后，Nginx无法启动，发生如下错误。
 
-```sh
-nginx: [emerg] cannot load certificate "/etc/nginx/ssl/test.crt": BIO_new_file() failed (SSL: error:0200100D:system library:fopen:Permission denied:fopen('/etc/nginx/ssl/test.crt','r') error:2006D002:BIO routines:BIO_new_file:system lib)
-```
+>nginx: [emerg] cannot load certificate "/etc/nginx/ssl/test.crt": BIO_new_file() failed (SSL: error:0200100D:system library:fopen:Permission denied:fopen('/etc/nginx/ssl/test.crt','r') error:2006D002:BIO routines:BIO_new_file:system lib)
 
 * 确认使用 `sudo` 运行。
 * 确认该文件可以 `cat` 打开。
@@ -67,7 +65,7 @@ $ sudo ls -lrtZ /etc/nginx/ssl
 
 ```
 
-可以使用 `semanage` 查询和修改默认的目录安全性本文。此即`restorecon` 恢复的所谓正确 SELinux type 的来源。
+可以使用 `semanage` 查询和修改默认的目录安全性本文，此即`restorecon` 恢复的所谓正确 SELinux type 的来源。
 
 ```sh
 $ sudo semanage fcontext -l|grep etc/nginx
