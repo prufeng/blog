@@ -110,3 +110,9 @@ let logConfigPath = './config/' + env + '/log4js.json';
 let logConfig = require(logConfigPath);
 log4js.configure(logConfig);
 ```
+
+## 相关文章
+
+* [Node.js Log4js输出JSON日志](https://blog.csdn.net/prufeng/article/details/84818255)
+* [Node.js Log4js输出自定义格式和变量](https://blog.csdn.net/prufeng/article/details/84986496)
+* [Node.js Log4js写Log的同时想做点什么，可以自己写Appender](https://blog.csdn.net/prufeng/article/details/85161517)
