@@ -59,12 +59,12 @@ Threshold Alert的主要作用，是它提供了界面，可以简单测试下�
 
 如果SMTP配置没问题的话，应该可以成功收到邮件。
 
-![](assets/ELK_Watcher_Threshold.PNG)
+![](assets/ELK_Watcher_Email.PNG)
 
 
 调用接口则选`Webhook`，一样可以直接`Send request`进行测试。
 
-![](assets/ELK_Watcher_Threshold.PNG)
+![](assets/ELK_Watcher_Webhook.PNG)
 
 注意到7.3还不支持HTTPS，7.6以后才有此选项。
 `Advance Watch`则没有这个问题。
