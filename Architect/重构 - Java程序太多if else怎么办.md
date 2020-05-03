@@ -104,7 +104,7 @@
 
 # 修改只是扩展
 
-当然，简单工厂模式还是不符合OCP (Open-Closed Principle) 的原则。
+当然，简单工厂模式还是不符合OCP原则 (Open-Closed Principle)。
 
 >Open for extention, closed for modification.
 
@@ -150,17 +150,19 @@
 ```java
     public void step5() {
         ChannelSimpleFactory channelFactory = new ChannelSimpleFactory();
+        // or by configure
         ChannelStrategy strategy = new ChannelWeightStrategy();
         channelFactory.setStrategy(strategy);
+        //
         Channel channel = channelFactory.newChannel();
         response = channel.callApi(xLoad, userInfo);
     }
 ```
 策略模式理解起来比较简单，不再赘述，不同项目细节也可能不同，不如直接看代码。
 
-https://github.com/prufeng/hellowork/tree/master/src/main/java/pan/rufeng/pattern/refactor/ifelsefactory
+[https://github.com/prufeng/hellowork/tree/master/src/main/java/pan/rufeng/pattern/refactor/ifelsefactory](https://github.com/prufeng/hellowork/tree/master/src/main/java/pan/rufeng/pattern/refactor/ifelsefactory)
 
-# 加太多类会不会不太好
+# 太多类会不会不太好
 
 最后还有一个奇怪的问题，就是，怎么看你加了那么多的类，会不会不太好？
 
