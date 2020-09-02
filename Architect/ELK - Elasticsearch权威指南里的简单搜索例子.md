@@ -153,7 +153,7 @@ GET employee/_search
 }
 ```
 
-具体分析看这里：[ELK - Elasticsearch权威指南里的聚合分析报错: Text fields are not optimised for operations that require per-document field data like aggregations and sorting]()
+具体分析看这里：[ELK - Elasticsearch权威指南里的聚合分析报错: Text fields are not optimised for operations that require per-document field data like aggregations and sorting](https://github.com/prufeng/blog/blob/master/Architect/ELK%20-%20Elasticsearch%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%87%8C%E7%9A%84%E8%81%9A%E5%90%88%E5%88%86%E6%9E%90%E6%8A%A5%E9%94%99.md)
 
 ## 某些员工兴趣
 
@@ -197,4 +197,4 @@ GET employee/_search
 ```
 # 相关文章
 
-[ELK - Elasticsearch权威指南里的聚合分析报错: Text fields are not optimised for operations that require per-document field data like aggregations and sorting]()
+[ELK - Elasticsearch权威指南里的聚合分析报错: Text fields are not optimised for operations that require per-document field data like aggregations and sorting](https://github.com/prufeng/blog/blob/master/Architect/ELK%20-%20Elasticsearch%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%87%8C%E7%9A%84%E8%81%9A%E5%90%88%E5%88%86%E6%9E%90%E6%8A%A5%E9%94%99.md)
