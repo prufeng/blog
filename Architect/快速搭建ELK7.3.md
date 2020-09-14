@@ -6,11 +6,11 @@ A quick start guild of ELK 7.3.2, including package installation and simple test
 
 安装版相比直接解压版还是有些好处的，最起码安装完就是Service，省却打命令行的许多麻烦。
 # Download and install
-* https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.2-x86_64.rpm
-* https://artifacts.elastic.co/downloads/kibana/kibana-7.3.2-x86_64.rpm
-* https://artifacts.elastic.co/downloads/logstash/logstash-7.3.2.rpm
-* https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.3.2-x86_64.rpm
-* https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.3.2-x86_64.rpm
+* elasticsearch-7.3.2-x86_64.rpm
+* kibana-7.3.2-x86_64.rpm
+* logstash-7.3.2.rpm
+* filebeat-7.3.2-x86_64.rpm
+* heartbeat-7.3.2-x86_64.rpm
 
 https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-elastic-stack.html
 
