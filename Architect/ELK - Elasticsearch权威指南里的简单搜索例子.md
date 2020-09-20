@@ -2,6 +2,8 @@ ELK - Elasticsearch权威指南里的简单搜索例子
 ====
 Elasticsearch权威指南是指官网的[《Elasticsearch：权威指南》](https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html)。
 
+例子跟官网不一样，是因为类型（Type）这种用法现在已经被抛弃了，所以缺省类型都是`_doc`。
+
 # 建立索引
 
 ```json
