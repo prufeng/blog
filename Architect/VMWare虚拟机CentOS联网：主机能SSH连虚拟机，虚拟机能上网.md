@@ -48,6 +48,7 @@ systemctl restart network
 # CentOS SSH配置
 CentOS 7.8 sshd默认是开的，所以不用管。
 ```
+# yum install net-tools
 # netstat -anpt|grep sshd
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      866/sshd
 tcp        0     28 192.168.31.191:22       192.168.31.95:49909     ESTABLISHED 3893/sshd: root@pts
