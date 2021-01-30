@@ -1,4 +1,4 @@
-Elasticsearch JVM OutofMemory, Kibana: [circuit_breaking_exception] [parent] Data too large
+Elasticsearch JVM OutOfMemory, Kibana: [circuit_breaking_exception] [parent] Data too large
 ====		
 Kibana打开就报错，其实也算是Kibana的bug，看到已经有人起了Issue，就算Elasticsearch出现Out of memory，但也不至于整个网页都死了嘛。
 
