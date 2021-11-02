@@ -1,6 +1,6 @@
 Elasticsearch: Validation Failed: 1: this action would add [2] total shards, but this cluster currently has [1000]/[1000] maximum shards open
 ====
-突然就写不进去了，看日志，shards有1000的限制。
+Elasticsearch突然就写不进去了，看日志，shards有1000的限制。
 
 Dev Tool
 ```
@@ -46,8 +46,27 @@ PUT /_cluster/settings
 {
   "transient": {
     "cluster": {
-      "max_shards_per_node":10000
+      "max_shards_per_node":2000
     }
   }
 }
+```
+
+碰巧一起重启时，Kibana可能会因为这个错启动不了。
+```
+[Failed to create internal index mappings[org.elasticsearch.common.ValidationException: Validation Failed: 1: this action would add [2] shards, but this cluster currently has [1000]/[1000] maximum normal shards open;]]
+```
+但其实Elasticsearch还是可以访问的，用命令行即可。
+```
+curl localhost:9200/_cluster/health?pretty -uelasticuser:changeme
+
+curl -X PUT "localhost:9200/_cluster/settings?pretty" -uelasticuser:changeme -H 'Content-Type: application/json' -d'
+{
+  "transient": {
+    "cluster": {
+      "max_shards_per_node":2000
+    }
+  }
+}
+'
 ```
