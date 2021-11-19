@@ -18,6 +18,8 @@ Complete the following steps for each node in your cluster.
 
 3. cp elastic-certificates.p12 /etc/elasticsearch/
 
+chmod 644 elastic-certificates.p12
+
 4. vi /etc/elasticsearch/elasticsearch.yml
 
 //#cluster.name: my-cluster
@@ -33,4 +35,7 @@ xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
 
 ./bin/elasticsearch-keystore add xpack.security.transport.ssl.keystore.secure_password
 ./bin/elasticsearch-keystore add xpack.security.transport.ssl.truststore.secure_password
+
+6. Restart elasticsearch
+
 
