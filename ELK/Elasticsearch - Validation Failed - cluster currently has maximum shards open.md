@@ -70,3 +70,7 @@ curl -X PUT "localhost:9200/_cluster/settings?pretty" -uelasticuser:changeme -H 
 }
 '
 ```
+
+以上命令只是临时更改配置，下次重启之后还是会失败，要持久化，可将transient改为persistent，不过注意这并没有从根本上解决shards太多的问题。
+
+
