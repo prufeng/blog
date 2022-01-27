@@ -2,7 +2,7 @@
 
 vi tomcat\conf\context.xml
 ```
-<Resources cachingAllowed="true" cacheMaxSize="100000" />
+<Resources cachingAllowed="true" cacheMaxSize="102400" />
 ```
 
 # cacheMaxSize	
