@@ -56,6 +56,7 @@
   * [Logback SMTPAppender Send Mail When Log Error](Java/Logback SMTPAppender Send Mail When Log Error.md)
   * [Spring - Schedule Task 如何动态改写Cron定义](Java/Spring - Schedule Task 如何动态改写Cron定义.md)
   * [ThreadPoolExecutor的行为模式](Java/ThreadPoolExecutor的行为模式.md)
+  * [定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE](Java/定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE.md)
 * JavaScript
   * [Angular Helloworld](JavaScript/Angular Helloworld.md)
   * [Angular Karma - Chrome have not captured in 60000 ms](JavaScript/Angular Karma - Chrome have not captured in 60000 ms.md)
