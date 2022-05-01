@@ -1,0 +1,2019 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ThreadPoolExecutor的行为模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE.html" />
+    
+    
+    <link rel="prev" href="Spring - Schedule Task 如何动态改写Cron定义.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Architect
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Architect/Autosys HTTPS - java.security.cert.CertificateException.html">
+            
+                <a href="../Architect/Autosys HTTPS - java.security.cert.CertificateException.html">
+            
+                    
+                    Autosys HTTPS - java.security.cert.CertificateException
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Architect/CSRF跨站请求伪造.html">
+            
+                <a href="../Architect/CSRF跨站请求伪造.html">
+            
+                    
+                    CSRF跨站请求伪造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Architect/Excel - VBA导入CSV为文本格式及中文乱码问题.html">
+            
+                <a href="../Architect/Excel - VBA导入CSV为文本格式及中文乱码问题.html">
+            
+                    
+                    Excel - VBA导入CSV为文本格式及中文乱码问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Architect/HTTPS证书准备过程.html">
+            
+                <a href="../Architect/HTTPS证书准备过程.html">
+            
+                    
+                    HTTPS证书准备过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Architect/JMeter测试动态参数API.html">
+            
+                <a href="../Architect/JMeter测试动态参数API.html">
+            
+                    
+                    JMeter测试动态参数API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Architect/JWT技术简单理解和实现.html">
+            
+                <a href="../Architect/JWT技术简单理解和实现.html">
+            
+                    
+                    JWT技术简单理解和实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Architect/LVS+Keepalived+Nginx高可用负载均衡方案.html">
+            
+                <a href="../Architect/LVS+Keepalived+Nginx高可用负载均衡方案.html">
+            
+                    
+                    LVS+Keepalived+Nginx高可用负载均衡方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Architect/Nginx - Basic Authentication为Kibana增加登录验证功能.html">
+            
+                <a href="../Architect/Nginx - Basic Authentication为Kibana增加登录验证功能.html">
+            
+                    
+                    Nginx - Basic Authentication为Kibana增加登录验证功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Architect/Nginx - cannot load certificate due to SELinux.html">
+            
+                <a href="../Architect/Nginx - cannot load certificate due to SELinux.html">
+            
+                    
+                    Nginx - cannot load certificate due to SELinux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../Architect/Nginx - LDAP Authentication.html">
+            
+                <a href="../Architect/Nginx - LDAP Authentication.html">
+            
+                    
+                    Nginx - LDAP Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../Architect/Nginx - the ssl parameter requires ngx_http_ssl_module.html">
+            
+                <a href="../Architect/Nginx - the ssl parameter requires ngx_http_ssl_module.html">
+            
+                    
+                    Nginx - the ssl parameter requires ngx_http_ssl_module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Architect/Nginx - 使用OpenSSL自签名证书配置HTTPS.html">
+            
+                <a href="../Architect/Nginx - 使用OpenSSL自签名证书配置HTTPS.html">
+            
+                    
+                    Nginx - 使用OpenSSL自签名证书配置HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../Architect/Send Mail from PowerShell Using SMTP.html">
+            
+                <a href="../Architect/Send Mail from PowerShell Using SMTP.html">
+            
+                    
+                    Send Mail from PowerShell Using SMTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../Architect/Tomcat AJP连接器配置secretRequired=true,但是属性secret确实空或者空字符串.html">
+            
+                <a href="../Architect/Tomcat AJP连接器配置secretRequired=true,但是属性secret确实空或者空字符串.html">
+            
+                    
+                    Tomcat AJP连接器配置secretRequired=true,但是属性secret确实空或者空字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../Architect/Tomcat无法将位于[XX]的资源添加到Web应用程序[XX]的缓存中.html">
+            
+                <a href="../Architect/Tomcat无法将位于[XX]的资源添加到Web应用程序[XX]的缓存中.html">
+            
+                    
+                    Tomcat无法将位于[XX]的资源添加到Web应用程序[XX]的缓存中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../Architect/Who is Solution Architect.html">
+            
+                <a href="../Architect/Who is Solution Architect.html">
+            
+                    
+                    Who is Solution Architect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../Architect/使用curl测试RESTful API.html">
+            
+                <a href="../Architect/使用curl测试RESTful API.html">
+            
+                    
+                    使用curl测试RESTful API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../Architect/使用Jmeter对接口进行压力测试.html">
+            
+                <a href="../Architect/使用Jmeter对接口进行压力测试.html">
+            
+                    
+                    使用Jmeter对接口进行压力测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../Architect/重构 - Java程序太多if else怎么办.html">
+            
+                <a href="../Architect/重构 - Java程序太多if else怎么办.html">
+            
+                    
+                    重构 - Java程序太多if else怎么办
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    DevOps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../DevOps/Anaconda多版本Python切换.html">
+            
+                <a href="../DevOps/Anaconda多版本Python切换.html">
+            
+                    
+                    Anaconda多版本Python切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../DevOps/Git Command Alias.html">
+            
+                <a href="../DevOps/Git Command Alias.html">
+            
+                    
+                    Git Command Alias
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../DevOps/Git error - RPC failed.html">
+            
+                <a href="../DevOps/Git error - RPC failed.html">
+            
+                    
+                    Git error - RPC failed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../DevOps/Git常用命令.html">
+            
+                <a href="../DevOps/Git常用命令.html">
+            
+                    
+                    Git常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../DevOps/Python基础.html">
+            
+                <a href="../DevOps/Python基础.html">
+            
+                    
+                    Python基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../DevOps/SSL证书PEM文件里有什么和要有什么.html">
+            
+                <a href="../DevOps/SSL证书PEM文件里有什么和要有什么.html">
+            
+                    
+                    SSL证书PEM文件里有什么和要有什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../DevOps/Upgrade Python2.7.5 to Python2.7.16.html">
+            
+                <a href="../DevOps/Upgrade Python2.7.5 to Python2.7.16.html">
+            
+                    
+                    Upgrade Python2.7.5 to Python2.7.16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../DevOps/VMWare虚拟机CentOS联网：主机能SSH连虚拟机，虚拟机能上网.html">
+            
+                <a href="../DevOps/VMWare虚拟机CentOS联网：主机能SSH连虚拟机，虚拟机能上网.html">
+            
+                    
+                    VMWare虚拟机CentOS联网：主机能SSH连虚拟机，虚拟机能上网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../DevOps/Win10不用虚拟机也可以装Linux Ubuntu.html">
+            
+                <a href="../DevOps/Win10不用虚拟机也可以装Linux Ubuntu.html">
+            
+                    
+                    Win10不用虚拟机也可以装Linux Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    ELK
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ELK/Define Mutilple Pipelines For Logstash.html">
+            
+                <a href="../ELK/Define Mutilple Pipelines For Logstash.html">
+            
+                    
+                    Define Mutilple Pipelines For Logstash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ELK/ElastAlert最大的坑.html">
+            
+                <a href="../ELK/ElastAlert最大的坑.html">
+            
+                    
+                    ElastAlert最大的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../ELK/Elasticsearch - Validation Failed - cluster currently has maximum shards open.html">
+            
+                <a href="../ELK/Elasticsearch - Validation Failed - cluster currently has maximum shards open.html">
+            
+                    
+                    Elasticsearch - Validation Failed - cluster currently has maximum shards open
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../ELK/Elasticsearch JVM OutofMemory.html">
+            
+                <a href="../ELK/Elasticsearch JVM OutofMemory.html">
+            
+                    
+                    Elasticsearch JVM OutofMemory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../ELK/elasticsearch.service start operation timed out.html">
+            
+                <a href="../ELK/elasticsearch.service start operation timed out.html">
+            
+                    
+                    elasticsearch.service start operation timed out
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../ELK/Elasticsearch什么时候使用Data Transform和Rollup Jobs.html">
+            
+                <a href="../ELK/Elasticsearch什么时候使用Data Transform和Rollup Jobs.html">
+            
+                    
+                    Elasticsearch什么时候使用Data Transform和Rollup Jobs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../ELK/Elasticsearch启动不了.html">
+            
+                <a href="../ELK/Elasticsearch启动不了.html">
+            
+                    
+                    Elasticsearch启动不了
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../ELK/Elasticsearch权威指南里的简单搜索例子.html">
+            
+                <a href="../ELK/Elasticsearch权威指南里的简单搜索例子.html">
+            
+                    
+                    Elasticsearch权威指南里的简单搜索例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../ELK/Elasticsearch权威指南里的聚合分析报错.html">
+            
+                <a href="../ELK/Elasticsearch权威指南里的聚合分析报错.html">
+            
+                    
+                    Elasticsearch权威指南里的聚合分析报错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../ELK/Filebeat重启之后不读Log了？Registry file is too large.html">
+            
+                <a href="../ELK/Filebeat重启之后不读Log了？Registry file is too large.html">
+            
+                    
+                    Filebeat重启之后不读Log了？Registry file is too large
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../ELK/Hearthbeat实现服务监控.html">
+            
+                <a href="../ELK/Hearthbeat实现服务监控.html">
+            
+                    
+                    Hearthbeat实现服务监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../ELK/Logstash-keystore保存Elastisearch密码.html">
+            
+                <a href="../ELK/Logstash-keystore保存Elastisearch密码.html">
+            
+                    
+                    Logstash-keystore保存Elastisearch密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../ELK/Logstash收集多种Filebeat数据.html">
+            
+                <a href="../ELK/Logstash收集多种Filebeat数据.html">
+            
+                    
+                    Logstash收集多种Filebeat数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../ELK/Logstash配置调试技巧.html">
+            
+                <a href="../ELK/Logstash配置调试技巧.html">
+            
+                    
+                    Logstash配置调试技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../ELK/Set up basic security for the Elastic Stack plus secured HTTPS traffic.html">
+            
+                <a href="../ELK/Set up basic security for the Elastic Stack plus secured HTTPS traffic.html">
+            
+                    
+                    Set up basic security for the Elastic Stack plus secured HTTPS traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../ELK/Set up basic security for the Elastic Stack.html">
+            
+                <a href="../ELK/Set up basic security for the Elastic Stack.html">
+            
+                    
+                    Set up basic security for the Elastic Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../ELK/Watcher发送告警邮件和调用接口.html">
+            
+                <a href="../ELK/Watcher发送告警邮件和调用接口.html">
+            
+                    
+                    Watcher发送告警邮件和调用接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../ELK/X-Pack设置用户密码.html">
+            
+                <a href="../ELK/X-Pack设置用户密码.html">
+            
+                    
+                    X-Pack设置用户密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../ELK/使用ElastAlert发送邮件.html">
+            
+                <a href="../ELK/使用ElastAlert发送邮件.html">
+            
+                    
+                    使用ElastAlert发送邮件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../ELK/快速搭建ELK7.2.html">
+            
+                <a href="../ELK/快速搭建ELK7.2.html">
+            
+                    
+                    快速搭建ELK7.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../ELK/快速搭建ELK7.3.html">
+            
+                <a href="../ELK/快速搭建ELK7.3.html">
+            
+                    
+                    快速搭建ELK7.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Apache Log4j2 Remote Code Execution RCE Vulnerability - CVE-2021-44228 - ESA-2021-31.html">
+            
+                <a href="Apache Log4j2 Remote Code Execution RCE Vulnerability - CVE-2021-44228 - ESA-2021-31.html">
+            
+                    
+                    Apache Log4j2 Remote Code Execution RCE Vulnerability - CVE-2021-44228 - ESA-2021-31
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Logback SMTPAppender Send Mail When Log Error.html">
+            
+                <a href="Logback SMTPAppender Send Mail When Log Error.html">
+            
+                    
+                    Logback SMTPAppender Send Mail When Log Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Spring - Schedule Task 如何动态改写Cron定义.html">
+            
+                <a href="Spring - Schedule Task 如何动态改写Cron定义.html">
+            
+                    
+                    Spring - Schedule Task 如何动态改写Cron定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="ThreadPoolExecutor的行为模式.html">
+            
+                <a href="ThreadPoolExecutor的行为模式.html">
+            
+                    
+                    ThreadPoolExecutor的行为模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE.html">
+            
+                <a href="定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE.html">
+            
+                    
+                    定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../JavaScript/Angular Helloworld.html">
+            
+                <a href="../JavaScript/Angular Helloworld.html">
+            
+                    
+                    Angular Helloworld
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../JavaScript/Angular Karma - Chrome have not captured in 60000 ms.html">
+            
+                <a href="../JavaScript/Angular Karma - Chrome have not captured in 60000 ms.html">
+            
+                    
+                    Angular Karma - Chrome have not captured in 60000 ms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../JavaScript/Angular Tutorial里的测试坑.html">
+            
+                <a href="../JavaScript/Angular Tutorial里的测试坑.html">
+            
+                    
+                    Angular Tutorial里的测试坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../JavaScript/Angular只跑某一个Test Case.html">
+            
+                <a href="../JavaScript/Angular只跑某一个Test Case.html">
+            
+                    
+                    Angular只跑某一个Test Case
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../JavaScript/GitBook运行报错 - no such file or directory.html">
+            
+                <a href="../JavaScript/GitBook运行报错 - no such file or directory.html">
+            
+                    
+                    GitBook运行报错 - no such file or directory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../JavaScript/JavaScript if变量 到底什么时候成立.html">
+            
+                <a href="../JavaScript/JavaScript if变量 到底什么时候成立.html">
+            
+                    
+                    JavaScript if变量 到底什么时候成立
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../JavaScript/JavaScript设计模式 - Strategy.html">
+            
+                <a href="../JavaScript/JavaScript设计模式 - Strategy.html">
+            
+                    
+                    JavaScript设计模式 - Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../JavaScript/JavaScript进阶 - Promise.html">
+            
+                <a href="../JavaScript/JavaScript进阶 - Promise.html">
+            
+                    
+                    JavaScript进阶 - Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../JavaScript/Node.js Bunyan输出JSON日志.html">
+            
+                <a href="../JavaScript/Node.js Bunyan输出JSON日志.html">
+            
+                    
+                    Node.js Bunyan输出JSON日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../JavaScript/Node.js Log4js使用详解.html">
+            
+                <a href="../JavaScript/Node.js Log4js使用详解.html">
+            
+                    
+                    Node.js Log4js使用详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../JavaScript/Node.js Log4js自己写Appender.html">
+            
+                <a href="../JavaScript/Node.js Log4js自己写Appender.html">
+            
+                    
+                    Node.js Log4js自己写Appender
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../JavaScript/Node.js Log4js输出JSON日志.html">
+            
+                <a href="../JavaScript/Node.js Log4js输出JSON日志.html">
+            
+                    
+                    Node.js Log4js输出JSON日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../JavaScript/Node.js Log4js输出自定义格式和变量.html">
+            
+                <a href="../JavaScript/Node.js Log4js输出自定义格式和变量.html">
+            
+                    
+                    Node.js Log4js输出自定义格式和变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../JavaScript/Node.js RESTful API and Express Unit Test.html">
+            
+                <a href="../JavaScript/Node.js RESTful API and Express Unit Test.html">
+            
+                    
+                    Node.js RESTful API and Express Unit Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../JavaScript/Node.js Sinon测试替身.html">
+            
+                <a href="../JavaScript/Node.js Sinon测试替身.html">
+            
+                    
+                    Node.js Sinon测试替身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../JavaScript/npm run传递参数.html">
+            
+                <a href="../JavaScript/npm run传递参数.html">
+            
+                    
+                    npm run传递参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../JavaScript/TypeScript Unit Test with Mocha, Istanbul and Chai.html">
+            
+                <a href="../JavaScript/TypeScript Unit Test with Mocha, Istanbul and Chai.html">
+            
+                    
+                    TypeScript Unit Test with Mocha, Istanbul and Chai
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../JavaScript/VSCode跳出右括号.html">
+            
+                <a href="../JavaScript/VSCode跳出右括号.html">
+            
+                    
+                    VSCode跳出右括号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../JavaScript/VSCode集成Git Bash作为Terminal.html">
+            
+                <a href="../JavaScript/VSCode集成Git Bash作为Terminal.html">
+            
+                    
+                    VSCode集成Git Bash作为Terminal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../JavaScript/使用Mocha和Istanbul实现Node.js单元测试和覆盖率.html">
+            
+                <a href="../JavaScript/使用Mocha和Istanbul实现Node.js单元测试和覆盖率.html">
+            
+                    
+                    使用Mocha和Istanbul实现Node.js单元测试和覆盖率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="../JavaScript/怎样安装NPM离线包.html">
+            
+                <a href="../JavaScript/怎样安装NPM离线包.html">
+            
+                    
+                    怎样安装NPM离线包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="../JavaScript/整合Bamboo和SonarQube实现Node.js自动化测试.html">
+            
+                <a href="../JavaScript/整合Bamboo和SonarQube实现Node.js自动化测试.html">
+            
+                    
+                    整合Bamboo和SonarQube实现Node.js自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Others
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Others/base_concerpt.html">
+            
+                <a href="../Others/base_concerpt.html">
+            
+                    
+                    base_concerpt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Others/保守投资策略研究.html">
+            
+                <a href="../Others/保守投资策略研究.html">
+            
+                    
+                    保守投资策略研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Others/商业银行主要监管指标.html">
+            
+                <a href="../Others/商业银行主要监管指标.html">
+            
+                    
+                    商业银行主要监管指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Others/指定Python安装包下载地址.html">
+            
+                <a href="../Others/指定Python安装包下载地址.html">
+            
+                    
+                    指定Python安装包下载地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Others/最受欢迎数据库排行榜.html">
+            
+                <a href="../Others/最受欢迎数据库排行榜.html">
+            
+                    
+                    最受欢迎数据库排行榜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Others/读《麦肯锡笔记思考法》.html">
+            
+                <a href="../Others/读《麦肯锡笔记思考法》.html">
+            
+                    
+                    读《麦肯锡笔记思考法》
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Pending
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Pending/TODO.md">
+            
+                <span>
+            
+                    
+                    TODO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Reading
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Reading/2018年书单.html">
+            
+                <a href="../Reading/2018年书单.html">
+            
+                    
+                    2018年书单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Reading/2019年书单.html">
+            
+                <a href="../Reading/2019年书单.html">
+            
+                    
+                    2019年书单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Reading/2020年书单.html">
+            
+                <a href="../Reading/2020年书单.html">
+            
+                    
+                    2020年书单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Reading/不要和我比懒，我懒得和你比.html">
+            
+                <a href="../Reading/不要和我比懒，我懒得和你比.html">
+            
+                    
+                    不要和我比懒，我懒得和你比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Reading/不要老骂孩子，打就行了.html">
+            
+                <a href="../Reading/不要老骂孩子，打就行了.html">
+            
+                    
+                    不要老骂孩子，打就行了
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../Reading/不要老骂孩子，打就行了（二）.html">
+            
+                <a href="../Reading/不要老骂孩子，打就行了（二）.html">
+            
+                    
+                    不要老骂孩子，打就行了（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../Reading/世俗的成功法则.html">
+            
+                <a href="../Reading/世俗的成功法则.html">
+            
+                    
+                    世俗的成功法则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../Reading/人生中最重要的事，是洗碗.html">
+            
+                <a href="../Reading/人生中最重要的事，是洗碗.html">
+            
+                    
+                    人生中最重要的事，是洗碗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../Reading/今天，我读了一首诗.html">
+            
+                <a href="../Reading/今天，我读了一首诗.html">
+            
+                    
+                    今天，我读了一首诗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../Reading/住在广州塔下的同事，你还好吗.html">
+            
+                <a href="../Reading/住在广州塔下的同事，你还好吗.html">
+            
+                    
+                    住在广州塔下的同事，你还好吗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../Reading/公司理财师专业能力.html">
+            
+                <a href="../Reading/公司理财师专业能力.html">
+            
+                    
+                    公司理财师专业能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../Reading/关于如何佛系地辅导作业.html">
+            
+                <a href="../Reading/关于如何佛系地辅导作业.html">
+            
+                    
+                    关于如何佛系地辅导作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="../Reading/妹妹画画：喜欢即是欢喜.html">
+            
+                <a href="../Reading/妹妹画画：喜欢即是欢喜.html">
+            
+                    
+                    妹妹画画：喜欢即是欢喜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="../Reading/想不到古人已经在用护手霜了，还是专业护手霜.html">
+            
+                <a href="../Reading/想不到古人已经在用护手霜了，还是专业护手霜.html">
+            
+                    
+                    想不到古人已经在用护手霜了，还是专业护手霜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="../Reading/我们应该知道我们所应该知道的.html">
+            
+                <a href="../Reading/我们应该知道我们所应该知道的.html">
+            
+                    
+                    我们应该知道我们所应该知道的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="../Reading/我在清河市场买菜.html">
+            
+                <a href="../Reading/我在清河市场买菜.html">
+            
+                    
+                    我在清河市场买菜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.17" data-path="../Reading/漫步华尔街.html">
+            
+                <a href="../Reading/漫步华尔街.html">
+            
+                    
+                    漫步华尔街
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.18" data-path="../Reading/爷爷血压飙升入院，看完之后却更不舒服了.html">
+            
+                <a href="../Reading/爷爷血压飙升入院，看完之后却更不舒服了.html">
+            
+                    
+                    爷爷血压飙升入院，看完之后却更不舒服了
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.19" data-path="../Reading/生又何哀，死又何乐？庄子曰：至乐.html">
+            
+                <a href="../Reading/生又何哀，死又何乐？庄子曰：至乐.html">
+            
+                    
+                    生又何哀，死又何乐？庄子曰：至乐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.20" data-path="../Reading/生命是最基本的人权.html">
+            
+                <a href="../Reading/生命是最基本的人权.html">
+            
+                    
+                    生命是最基本的人权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.21" data-path="../Reading/老婆死了，庄子却还在唱歌，这到底怎么回事.html">
+            
+                <a href="../Reading/老婆死了，庄子却还在唱歌，这到底怎么回事.html">
+            
+                    
+                    老婆死了，庄子却还在唱歌，这到底怎么回事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.22" data-path="../Reading/读《未来简史》，思考未来.html">
+            
+                <a href="../Reading/读《未来简史》，思考未来.html">
+            
+                    
+                    读《未来简史》，思考未来
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.23" data-path="../Reading/读《邓小平时代》.html">
+            
+                <a href="../Reading/读《邓小平时代》.html">
+            
+                    
+                    读《邓小平时代》
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ThreadPoolExecutor的行为模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#xFEFF;&#x53D1;&#x73B0;ThreadPoolExecuter&#x7684;&#x884C;&#x4E3A;&#x6A21;&#x5F0F;&#x8DDF;&#x81EA;&#x5DF1;&#x4E4B;&#x524D;&#x7684;&#x7406;&#x89E3;&#x6709;&#x4E9B;&#x51FA;&#x5165;&#xFF08;&#x5751;&#xFF09;&#xFF0C;&#x5185;&#x5728;&#x903B;&#x8F91;&#x5E76;&#x4E0D;&#x662F;&#x8868;&#x9762;&#x4E0A;&#x770B;&#x90A3;&#x4E48;&#x76F4;&#x89C2;&#xFF0C;&#x7279;&#x5730;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x3002;</p>
+<h2 id="threadpoolexecutor&#x6784;&#x9020;&#x51FD;&#x6570;">ThreadPoolExecutor&#x6784;&#x9020;&#x51FD;&#x6570;</h2>
+<pre><code class="lang-Java">    <span class="hljs-comment">/**
+     * Creates a new {<span class="hljs-doctag">@code</span> ThreadPoolExecutor} with the given initial
+     * parameters.
+     *
+     * <span class="hljs-doctag">@param</span> corePoolSize the number of threads to keep in the pool, even
+     *        if they are idle, unless {<span class="hljs-doctag">@code</span> allowCoreThreadTimeOut} is set
+     * <span class="hljs-doctag">@param</span> maximumPoolSize the maximum number of threads to allow in the
+     *        pool
+     * <span class="hljs-doctag">@param</span> keepAliveTime when the number of threads is greater than
+     *        the core, this is the maximum time that excess idle threads
+     *        will wait for new tasks before terminating.
+     * <span class="hljs-doctag">@param</span> unit the time unit for the {<span class="hljs-doctag">@code</span> keepAliveTime} argument
+     * <span class="hljs-doctag">@param</span> workQueue the queue to use for holding tasks before they are
+     *        executed.  This queue will hold only the {<span class="hljs-doctag">@code</span> Runnable}
+     *        tasks submitted by the {<span class="hljs-doctag">@code</span> execute} method.
+     * <span class="hljs-doctag">@param</span> threadFactory the factory to use when the executor
+     *        creates a new thread
+     * <span class="hljs-doctag">@param</span> handler the handler to use when execution is blocked
+     *        because the thread bounds and queue capacities are reached
+     * <span class="hljs-doctag">@throws</span> IllegalArgumentException if one of the following holds:&lt;br&gt;
+     *         {<span class="hljs-doctag">@code</span> corePoolSize &lt; 0}&lt;br&gt;
+     *         {<span class="hljs-doctag">@code</span> keepAliveTime &lt; 0}&lt;br&gt;
+     *         {<span class="hljs-doctag">@code</span> maximumPoolSize &lt;= 0}&lt;br&gt;
+     *         {<span class="hljs-doctag">@code</span> maximumPoolSize &lt; corePoolSize}
+     * <span class="hljs-doctag">@throws</span> NullPointerException if {<span class="hljs-doctag">@code</span> workQueue}
+     *         or {<span class="hljs-doctag">@code</span> threadFactory} or {<span class="hljs-doctag">@code</span> handler} is null
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ThreadPoolExecutor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> corePoolSize,
+                              <span class="hljs-keyword">int</span> maximumPoolSize,
+                              <span class="hljs-keyword">long</span> keepAliveTime,
+                              TimeUnit unit,
+                              BlockingQueue&lt;Runnable&gt; workQueue,
+                              ThreadFactory threadFactory,
+                              RejectedExecutionHandler handler)</span> </span>{
+        <span class="hljs-keyword">if</span> (corePoolSize &lt; <span class="hljs-number">0</span> ||
+            maximumPoolSize &lt;= <span class="hljs-number">0</span> ||
+            maximumPoolSize &lt; corePoolSize ||
+            keepAliveTime &lt; <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException();
+        <span class="hljs-keyword">if</span> (workQueue == <span class="hljs-keyword">null</span> || threadFactory == <span class="hljs-keyword">null</span> || handler == <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+        <span class="hljs-keyword">this</span>.acc = System.getSecurityManager() == <span class="hljs-keyword">null</span> ?
+                <span class="hljs-keyword">null</span> :
+                AccessController.getContext();
+        <span class="hljs-keyword">this</span>.corePoolSize = corePoolSize;
+        <span class="hljs-keyword">this</span>.maximumPoolSize = maximumPoolSize;
+        <span class="hljs-keyword">this</span>.workQueue = workQueue;
+        <span class="hljs-keyword">this</span>.keepAliveTime = unit.toNanos(keepAliveTime);
+        <span class="hljs-keyword">this</span>.threadFactory = threadFactory;
+        <span class="hljs-keyword">this</span>.handler = handler;
+    }
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4F7F;&#x7528;&#x7F3A;&#x7701;&#x7684;<code>ThreadFactory</code>&#x6216;<code>RejectedExecutionHandler</code>&#xFF0C;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-Java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ThreadPoolExecutor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> corePoolSize,
+                              <span class="hljs-keyword">int</span> maximumPoolSize,
+                              <span class="hljs-keyword">long</span> keepAliveTime,
+                              TimeUnit unit,
+                              BlockingQueue&lt;Runnable&gt; workQueue)</span> </span>{
+        <span class="hljs-keyword">this</span>(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
+             Executors.defaultThreadFactory(), defaultHandler);
+    }
+</code></pre>
+<h2 id="threadpoolexecutor&#x53C2;&#x6570;&#x8BF4;&#x660E;">ThreadPoolExecutor&#x53C2;&#x6570;&#x8BF4;&#x660E;</h2>
+<ul>
+<li>corePoolSize</li>
+</ul>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#xFF0C;&#x5373;&#x4F7F;&#x5904;&#x4E8E;&#x95F2;&#x7F6E;&#x72B6;&#x6001;&#x4E5F;&#x4E0D;&#x4F1A;&#x56DE;&#x6536;&#xFF0C;&#x9664;&#x975E;&#x5C06;<code>allowCoreThreadTimeOut</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>true</code>&#x3002;</p>
+<ul>
+<li>maximumPoolSize</li>
+</ul>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x6240;&#x80FD;&#x5BB9;&#x7EB3;&#x7684;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x3002;</p>
+<ul>
+<li>keepAliveTime</li>
+</ul>
+<p>&#x5F53;&#x7EBF;&#x7A0B;&#x6570;&#x8D85;&#x8FC7;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x95F2;&#x7F6E;&#x8D85;&#x8FC7;<code>keepAliveTime</code>&#x5C31;&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#x3002;</p>
+<ul>
+<li>unit</li>
+</ul>
+<p><code>keepAliveTime</code>&#x7684;&#x65F6;&#x95F4;&#x5355;&#x4F4D;&#xFF0C;&#x5982;<code>TimeUnit.SECONDS</code>&#x3002;</p>
+<ul>
+<li>workQueue</li>
+</ul>
+<p>&#x5DE5;&#x4F5C;&#x961F;&#x5217;&#xFF0C;&#x4FDD;&#x5B58;&#x901A;&#x8FC7;<code>execute</code>&#x65B9;&#x6CD5;&#x63D0;&#x4EA4;&#x7684;&#x8FD8;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x7684;<code>Runnable</code>&#x4EFB;&#x52A1;&#x3002;</p>
+<ul>
+<li>threadFactory</li>
+</ul>
+<p>&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x9700;&#x91CD;&#x5199;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-Java">    <span class="hljs-comment">/**
+     * The default thread factory
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DefaultThreadFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ThreadFactory</span> </span>{
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> AtomicInteger poolNumber = <span class="hljs-keyword">new</span> AtomicInteger(<span class="hljs-number">1</span>);
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ThreadGroup group;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> AtomicInteger threadNumber = <span class="hljs-keyword">new</span> AtomicInteger(<span class="hljs-number">1</span>);
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String namePrefix;
+
+        DefaultThreadFactory() {
+            SecurityManager s = System.getSecurityManager();
+            group = (s != <span class="hljs-keyword">null</span>) ? s.getThreadGroup() :
+                                  Thread.currentThread().getThreadGroup();
+            namePrefix = <span class="hljs-string">&quot;pool-&quot;</span> +
+                          poolNumber.getAndIncrement() +
+                         <span class="hljs-string">&quot;-thread-&quot;</span>;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Thread <span class="hljs-title">newThread</span><span class="hljs-params">(Runnable r)</span> </span>{
+            Thread t = <span class="hljs-keyword">new</span> Thread(group, r,
+                                  namePrefix + threadNumber.getAndIncrement(),
+                                  <span class="hljs-number">0</span>);
+            <span class="hljs-keyword">if</span> (t.isDaemon())
+                t.setDaemon(<span class="hljs-keyword">false</span>);
+            <span class="hljs-keyword">if</span> (t.getPriority() != Thread.NORM_PRIORITY)
+                t.setPriority(Thread.NORM_PRIORITY);
+            <span class="hljs-keyword">return</span> t;
+        }
+    }
+</code></pre>
+<ul>
+<li>handler</li>
+</ul>
+<p><code>RejectedExecutionHandler</code>&#x662F;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x7EBF;&#x7A0B;&#x8D44;&#x6E90;&#x8017;&#x5C3D;&#x65F6;&#x7684;&#x62D2;&#x7EDD;&#x5904;&#x7406;&#x7B56;&#x7565;&#xFF0C;&#x7F3A;&#x7701;&#x662F;<code>AbortPolicy</code>&#xFF0C;&#x629B;&#x51FA;&#x62D2;&#x7EDD;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x3002;
+&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x4F7F;&#x7528;&#x5E94;&#x8BE5;&#x8981;&#x80FD;&#x6EE1;&#x8DB3;&#x4E1A;&#x52A1;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x4ECE;&#x8FD9;&#x4E2A;&#x610F;&#x4E49;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x662F;&#x5408;&#x9002;&#x7684;&#x3002;&#x9047;&#x5230;&#x6B64;&#x5F02;&#x5E38;&#x5E94;&#x8BE5;&#x9996;&#x5148;&#x56DE;&#x53BB;&#x68C0;&#x89C6;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x53C2;&#x6570;&#x5B9A;&#x4E49;&#x800C;&#x975E;&#x6539;&#x53D8;&#x7B56;&#x7565;&#x3002;</p>
+<pre><code class="lang-Java">    <span class="hljs-comment">/**
+     * A handler for rejected tasks that throws a
+     * {<span class="hljs-doctag">@code</span> RejectedExecutionException}.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbortPolicy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">RejectedExecutionHandler</span> </span>{
+        <span class="hljs-comment">/**
+         * Creates an {<span class="hljs-doctag">@code</span> AbortPolicy}.
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AbortPolicy</span><span class="hljs-params">()</span> </span>{ }
+
+        <span class="hljs-comment">/**
+         * Always throws RejectedExecutionException.
+         *
+         * <span class="hljs-doctag">@param</span> r the runnable task requested to be executed
+         * <span class="hljs-doctag">@param</span> e the executor attempting to execute this task
+         * <span class="hljs-doctag">@throws</span> RejectedExecutionException always
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">rejectedExecution</span><span class="hljs-params">(Runnable r, ThreadPoolExecutor e)</span> </span>{
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RejectedExecutionException(<span class="hljs-string">&quot;Task &quot;</span> + r.toString() +
+                                                 <span class="hljs-string">&quot; rejected from &quot;</span> +
+                                                 e.toString());
+        }
+    }
+</code></pre>
+<h2 id="threadpoolexecutor&#x884C;&#x4E3A;&#x6A21;&#x5F0F;">ThreadPoolExecutor&#x884C;&#x4E3A;&#x6A21;&#x5F0F;</h2>
+<ul>
+<li>1.<code>&#x7EBF;&#x7A0B;&#x6570; &lt;= corePoolSize</code>&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;</li>
+<li>2.<code>corePoolSize &lt; &#x7EBF;&#x7A0B;&#x6570; &lt;= maximumPoolSize</code>&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x79FB;&#x5165;&#x961F;&#x5217;&#x7B49;&#x5F85;</li>
+<li>3.&#x5982;&#x679C;&#x961F;&#x5217;&#x5DF2;&#x6EE1;&#xFF0C;&#x5219;&#x65B0;&#x5EFA;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;</li>
+<li>4.&#x961F;&#x5217;&#x5DF2;&#x6EE1;&#xFF0C;&#x4E14;<code>&#x7EBF;&#x7A0B;&#x6570; &gt; maximumPoolSize</code>&#xFF0C;&#x5219;&#x7531;<code>RejectedExecutionHandler</code>&#x629B;&#x51FA;&#x5F02;&#x5E38;</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#xFF1A;<br><code>&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x6700;&#x5927;&#x8FD0;&#x884C;&#x7EBF;&#x7A0B;&#x6570; = &#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570; + &#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;</code><br><code>&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x4EFB;&#x52A1;&#x541E;&#x5410;&#x91CF; = &#x6700;&#x5927;&#x8FD0;&#x884C;&#x7EBF;&#x7A0B;&#x6570; + &#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5BB9;&#x91CF;</code>&#x3002;   </p>
+<p>ThreadPoolExecutor&#x7684;&#x884C;&#x4E3A;&#x6A21;&#x5F0F;&#x4E0E;&#x6240;&#x4F7F;&#x7528;&#x7684;BlockingQueue&#x6709;&#x5F88;&#x5927;&#x5173;&#x7CFB;&#x3002;&#x5F53;&#x4F7F;&#x7528;SynchronousQueue&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5BB9;&#x91CF;&#x4E3A;0&#xFF0C;&#x5982;&#x679C;<code>&#x7EBF;&#x7A0B;&#x6570; &gt; corePoolSize</code>&#xFF0C;&#x76F4;&#x63A5;&#x65B0;&#x5EFA;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x540E;&#x7EED;&#x4EFB;&#x52A1;&#xFF0C;&#x76F4;&#x5230;&#x8D85;&#x8FC7;<code>maximumPoolSize</code>&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;<br>&#x5F53;&#x4F7F;&#x7528;&#x6CA1;&#x6709;&#x5927;&#x5C0F;&#x9650;&#x5236;&#x7684;<code>LinkedBlockingDeque</code>&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x5BB9;&#x91CF;&#x65E0;&#x9650;&#xFF0C;<code>maximumPoolSize</code>&#x9650;&#x5236;&#x5931;&#x53BB;&#x610F;&#x4E49;&#xFF0C;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x6700;&#x591A;&#x53EA;&#x6709;<code>corePoolSize</code>&#x4E2A;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x65B0;&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x6301;&#x7EED;&#x6DFB;&#x52A0;&#x5230;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x3002;</p>
+<h2 id="threadpoolexecutor&#x9A8C;&#x8BC1;&#x5B9E;&#x4F8B;">ThreadPoolExecutor&#x9A8C;&#x8BC1;&#x5B9E;&#x4F8B;</h2>
+<pre><code>package pan.rufeng.demo;
+
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+public class DemoThreadPoolExecuter {
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println(&quot;Test begin&quot;);
+        Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+//                    System.out.println(Thread.currentThread().getName() + &quot; run&quot;);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        };
+
+        // Test case 1: SynchronousQueue, 6 tasks, corePoolSize 3, maxmumPoolSize 6, keepAliveTime 5&#x79D2;
+        // keepAliveTime to 6
+        // maxmumPoolSize to 5
+        // Test case 2: LinkedBlockingQueue without size limit, 6 tasks, corePoolSize 4, maxmumPoolSize 6, keepAliveTime 5&#x79D2;
+        // Test case 3: ArrayBlockingQueue&#x6216;LinkedBlockingQueue with size limit, 6 tasks, corePoolSize 4, maxmumPoolSize 6, keepAliveTime 5&#x79D2;
+        ThreadPoolExecutor tpe = new ThreadPoolExecutor(3, 6, 5, TimeUnit.SECONDS, new LinkedBlockingQueue&lt;Runnable&gt;(2));
+        executeRunnable3Times(&quot;&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;&quot;, myRunnable, tpe);
+        executeRunnable3Times(&quot;&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;&quot;,myRunnable, tpe);
+        Thread.sleep(8000);
+        System.out.println(&quot;   8&#x79D2;&#x4E4B;&#x540E;&#xFF1A;corePoolSize: &quot; + tpe.getCorePoolSize() + &quot;\t poolSize: &quot; + tpe.getPoolSize() + &quot;\t queueSize: &quot; + tpe.getQueue().size());
+
+    }
+
+    private static void executeRunnable3Times(String title, Runnable myRunnable, ThreadPoolExecutor tpe) {
+        tpe.execute(myRunnable);
+        tpe.execute(myRunnable);
+        tpe.execute(myRunnable);
+        System.out.println(title + &quot;corePoolSize: &quot; + tpe.getCorePoolSize() + &quot;\t poolSize: &quot; + tpe.getPoolSize() + &quot;\t queueSize: &quot; + tpe.getQueue().size());
+    }
+}
+</code></pre><p>&#x603B;&#x5171;&#x63D0;&#x4EA4;6&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x7761;&#x7720;2&#x79D2;&#xFF0C;&#x5206;&#x4E24;&#x6B21;&#x63D0;&#x4EA4;&#xFF0C;&#x6BCF;&#x6B21;&#x63D0;&#x4EA4;3&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#x6253;&#x5370;Executor&#x72B6;&#x51B5;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;8&#x79D2;&#x4E4B;&#x540E;&#x518D;&#x4E00;&#x6B21;&#x6253;&#x5370;Executor&#x6700;&#x7EC8;&#x72B6;&#x6001;&#xFF08;&#x9A8C;&#x8BC1;&#x7EBF;&#x7A0B;&#x56DE;&#x6536;&#xFF09;&#x3002;   </p>
+<ul>
+<li>Test case 1: SynchronousQueue, 6 tasks, corePoolSize 4, maxmumPoolSize 6, keepAliveTime 5<pre><code>ThreadPoolExecutor tpe = new ThreadPoolExecutor(4, 6, 5, TimeUnit.SECONDS, new SynchronousQueue&lt;Runnable&gt;());
+</code></pre>&#x7ED3;&#x679C;&#xFF1A;&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#x8D85;&#x8FC7;corePoolSize&#x540E;&#xFF0C;&#x521B;&#x5EFA;2&#x4E2A;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x52A1;&#x653E;&#x8FDB;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x3002;<pre><code>&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 3     queueSize: 0
+&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 6     queueSize: 0
+ 8&#x79D2;&#x4E4B;&#x540E;&#xFF1A;corePoolSize: 4     poolSize: 4     queueSize: 0
+</code></pre>keepAliveTime&#x4ECE;5&#x79D2;&#x6539;&#x6210;6&#x79D2;&#xFF0C;&#x6216;&#x8005;&#x4E3B;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;&#x65F6;&#x95F4;8&#x79D2;&#x8C03;&#x5230;7&#x79D2;&#xFF0C;&#x5219;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x4E0D;&#x56DE;&#x6536;&#x3002;<pre><code>&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 3     queueSize: 0
+&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 6     queueSize: 0
+ 8&#x79D2;&#x4E4B;&#x540E;&#xFF1A;corePoolSize: 4     poolSize: 6     queueSize: 0
+</code></pre>&#x63D0;&#x4EA4;&#x7EBF;&#x7A0B;&#x6570;&#xFF08;6&#xFF09;&#x5927;&#x4E8E;maxmumPoolSize&#xFF08;&#x5982;&#x6539;&#x6210;5&#xFF09;&#xFF0C;&#x5219;throw RejectedExecutionException&#x3002;<pre><code>&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 3     queueSize: 0
+Exception in thread &quot;main&quot; java.util.concurrent.RejectedExecutionException: Task pan.rufeng.demo.DemoThreadPoolExecuter$1@45ee12a7 rejected from java.util.concurrent.ThreadPoolExecutor@330bedb4[Running, pool size = 5, active threads = 5, queued tasks = 0, completed tasks = 0]
+  at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2063)
+  at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:830)
+  at java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1379)
+  at pan.rufeng.demo.DemoThreadPoolExecuter.executeRunnable3Times(DemoThreadPoolExecuter.java:36)
+  at pan.rufeng.demo.DemoThreadPoolExecuter.main(DemoThreadPoolExecuter.java:27)
+</code></pre></li>
+<li><p>Test case 2: LinkedBlockingQueue without size limit, 6 tasks, corePoolSize 4, maxmumPoolSize 6, keepAliveTime 5&#x79D2;</p>
+<pre><code>ThreadPoolExecutor tpe = new ThreadPoolExecutor(4, 6, 5, TimeUnit.SECONDS, new LinkedBlockingQueue&lt;Runnable&gt;());
+</code></pre><p>&#x7ED3;&#x679C;&#xFF1A;&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#xFF0C;2&#x4E2A;&#x4EFB;&#x52A1;&#x653E;&#x5230;&#x961F;&#x5217;&#x7B49;&#x5F85;&#x3002;</p>
+<pre><code>&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 3     queueSize: 0
+&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 4     queueSize: 2
+ 8&#x79D2;&#x4E4B;&#x540E;&#xFF1A;corePoolSize: 4     poolSize: 4     queueSize: 0
+</code></pre><p>keepAliveTime&#x6539;&#x5230;8&#x79D2;&#x6216;&#x8005;&#x66F4;&#x5927;&#xFF0C;&#x5BF9;&#x7ED3;&#x679C;&#x6CA1;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x53EA;&#x7528;&#x5230;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x3002;<br>maxmumPoolSize&#xFF08;&#x5982;&#x6539;&#x6210;4&#xFF09;&#x5C0F;&#x4E8E;&#x63D0;&#x4EA4;&#x7EBF;&#x7A0B;&#x6570;&#xFF08;6&#xFF09;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F9D;&#x7136;&#x6B63;&#x5E38;&#x6267;&#x884C;&#xFF0C;&#x7ED3;&#x679C;&#x540C;&#x4E0A;&#x3002;maxmumPoolSize&#x9650;&#x5236;&#x5931;&#x53BB;&#x610F;&#x4E49;&#xFF08;&#x4F46;&#x4E0D;&#x80FD;&#x5C0F;&#x4E8E;corePoolSize&#xFF09;&#x3002;   </p>
+</li>
+<li><p>Test case 3: ArrayBlockingQueue&#x6216;LinkedBlockingQueue with size limit, 6 tasks, corePoolSize 4, maxmumPoolSize 6, keepAliveTime 5&#x79D2;</p>
+<pre><code>ThreadPoolExecutor tpe = new ThreadPoolExecutor(4, 6, 5, TimeUnit.SECONDS, new LinkedBlockingQueue&lt;Runnable&gt;(1));
+ThreadPoolExecutor tpe = new ThreadPoolExecutor(4, 6, 5, TimeUnit.SECONDS, new ArrayBlockingQueue&lt;Runnable&gt;(1));
+</code></pre><p>&#x7ED3;&#x679C;&#xFF1A;&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#x8D85;&#x8FC7;corePoolSize&#x540E;&#xFF0C;&#x521B;&#x5EFA;1&#x4E2A;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;1&#x4E2A;&#x4EFB;&#x52A1;&#x653E;&#x8FDB;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x3002;</p>
+<pre><code>&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 3     queueSize: 0
+&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 5     queueSize: 1
+ 8&#x79D2;&#x4E4B;&#x540E;&#xFF1A;corePoolSize: 4     poolSize: 4     queueSize: 0
+</code></pre><p>keepAliveTime&#x4ECE;5&#x79D2;&#x6539;&#x6210;6&#x79D2;&#xFF0C;&#x6216;&#x8005;&#x4E3B;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;&#x65F6;&#x95F4;8&#x79D2;&#x8C03;&#x5230;7&#x79D2;&#xFF0C;&#x5219;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x4E0D;&#x56DE;&#x6536;&#x3002;</p>
+<pre><code>&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 3     queueSize: 0
+&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 4     poolSize: 5     queueSize: 1
+ 8&#x79D2;&#x4E4B;&#x540E;&#xFF1A;corePoolSize: 4     poolSize: 5     queueSize: 0
+</code></pre><p>&#x53EF;&#x89C1;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x6700;&#x5927;&#x8FD0;&#x884C;&#x7EBF;&#x7A0B;&#x6570;&#x4E3A;5&#xFF0C;maxmumPoolSize&#x8BBE;&#x7F6E;&#x9700;&#x5927;&#x4E8E;5&#xFF0C;&#x5426;&#x5219;throw RejectedExecutionException&#x3002;<br>&#x5C06;corePoolSize&#x8BBE;&#x4E3A;3&#xFF0C;&#x961F;&#x5217;&#x5BB9;&#x91CF;&#x8BBE;&#x4E3A;2&#xFF0C;&#x5219;&#x53EF;&#x5F97;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#x3002;&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x521B;&#x5EFA;1&#x4E2A;&#x975E;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x5269;&#x4E0B;&#x7684;2&#x4E2A;&#x4EFB;&#x52A1;&#x8FDB;&#x961F;&#x5217;&#x3002;</p>
+<pre><code>&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 3     poolSize: 3     queueSize: 0
+&#x7B2C;&#x4E8C;&#x6B21;&#x63D0;&#x4EA4;&#xFF1A;corePoolSize: 3     poolSize: 4     queueSize: 2
+ 8&#x79D2;&#x4E4B;&#x540E;&#xFF1A;corePoolSize: 3     poolSize: 3     queueSize: 0
+</code></pre></li>
+</ul>
+<p>&#x5177;&#x4F53;&#x9A8C;&#x8BC1;&#x4F8B;&#x5B50;&#x4E5F;&#x53EF;&#x53C2;&#x8003;&#xFF1A;
+<a href="https://blog.csdn.net/qq_25806863/article/details/71126867" target="_blank">https://blog.csdn.net/qq_25806863/article/details/71126867</a></p>
+<p>Java Doc:<br><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html" target="_blank">https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html</a></p>
+<p>&#x9605;&#x8BFB;&#x5BFC;&#x822A;&#xFF1A;</p>
+<p>[toc]</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Spring - Schedule Task 如何动态改写Cron定义.html" class="navigation navigation-prev " aria-label="Previous page: Spring - Schedule Task 如何动态改写Cron定义">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE.html" class="navigation navigation-next " aria-label="Next page: 定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ThreadPoolExecutor的行为模式","level":"1.5.4","depth":2,"next":{"title":"定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE","level":"1.5.5","depth":2,"path":"Java/定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE.md","ref":"Java/定制JDK刪除JRE里不必要的文件 Build Custom JDK JRE.md","articles":[]},"previous":{"title":"Spring - Schedule Task 如何动态改写Cron定义","level":"1.5.3","depth":2,"path":"Java/Spring - Schedule Task 如何动态改写Cron定义.md","ref":"Java/Spring - Schedule Task 如何动态改写Cron定义.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Java/ThreadPoolExecutor的行为模式.md","mtime":"2021-11-10T14:52:50.013Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-30T15:11:10.795Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
