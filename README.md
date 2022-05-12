@@ -1,4 +1,4 @@
-PanRufeng's Blog
+Rufeng's Blog
 ======
 All non-project logs, or blog articles.
 

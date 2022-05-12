@@ -1,10 +1,10 @@
 import { opendir } from 'fs/promises';
 
 try {
-  console.log("* [PanRufeng's Blog](README.md)");
+  console.log("* [Rufeng's Blog](README.md)");
   const dir = await opendir('./');
   for await (const dirent of dir)
-    if (dirent.isDirectory() && !dirent.name.startsWith('.') && !dirent.name.startsWith('_')  && dirent.name!='node_modules') {
+    if (dirent.isDirectory() && !dirent.name.startsWith('.') && !dirent.name.startsWith('_')  && dirent.name !='node_modules' && dirent.name !='docs') {
       console.log("* " + dirent.name);
       const subDir = await opendir(dirent.name);
       for await (const f of subDir)
