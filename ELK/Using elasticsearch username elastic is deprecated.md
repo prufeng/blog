@@ -1,4 +1,7 @@
+# Issue
+Using "elasticsearch.username: elastic" is deprecated
 
+# Solution
 新建一个elastic/kibana token: mytoken
 ```
 POST /_security/service/elastic/kibana/credential/token/mytoken
