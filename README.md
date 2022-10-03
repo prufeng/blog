@@ -5,12 +5,8 @@ All non-project logs, or blog articles.
 # CSDN
 https://blog.csdn.net/prufeng
 
-# 公众号
-rufengp
-
-（非技术）
-
-![](Others/assets/xzk_ewm.jpg)
+# 非技术公众号
+好辣K（haolakei）
 
 # Gitbook 
 
