@@ -31,8 +31,8 @@ def list_img_src():
     headers = get_headers()
     lst = []
     for x in range(657, 666):
-        url = 'http://www.1010jiajiao.com/daan/chapter_34430' + \
-            str(x) + '.html'
+    # for x in range(345, 359): #五年级英语上册
+        url = 'http://www.1010jiajiao.com/daan/chapter_34430' + str(x) + '.html'
         img = img_src(url, headers)
         print(img)
         lst.append(img)
