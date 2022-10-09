@@ -30,9 +30,12 @@ def list_img_src():
     url = 'http://www.1010jiajiao.com/daan/chapter_34430657.html'
     headers = get_headers()
     lst = []
-    for x in range(657, 666):
-    # for x in range(345, 359): #五年级英语上册
-        url = 'http://www.1010jiajiao.com/daan/chapter_34430' + str(x) + '.html'
+    # for x in range(30657, 30666): #五年级语文上册
+    # for x in range(30345, 30359): #五年级英语上册
+    # for x in range(29800, 29809): #五年级数学上册
+    all = list(range(30657, 30666)) + list(range(30345, 30359)) + list(range(29800, 29809))
+    for x in all: # All
+        url = 'http://www.1010jiajiao.com/daan/chapter_344' + str(x) + '.html'
         img = img_src(url, headers)
         print(img)
         lst.append(img)
