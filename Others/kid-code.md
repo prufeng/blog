@@ -1,0 +1,25 @@
+# 政策资讯
+# 赛事冲刺
+# 招生信息
+# 升学规划
+# 托管陪伴
+
+# KET
+https://www.cambridgeenglish.org/
+https://www.cambridgeenglish.org/images/23387-ket-schools-vocabulary-list.pdf
+https://www.cambridgeenglish.org/Images/506886-a2-key-2020-vocabulary-list.pdf
+https://www.cambridgeenglish.org/Images/506887-b1-preliminary-2020-vocabulary-list.pdf
+
+# 信息学奥赛
+# 青少年人工智能编程水平测试
+# 青少年人工智能技术水平测试
+# 蓝桥杯
+http://www.kjtcsw.com/d/file/p/2022/06-09/02a4913fc84befb9d2b25fb2528d52e3.pdf  
+http://www.kjtcsw.com/d/file/p/2022/06-09/f715cbd4d2fd61d9cb279414a9247dce.pdf  
+http://www.kjtcsw.com/d/file/p/2022/06-09/62e955d336e2f02084fd019cfa63240d.pdf  
+http://m.kjtcsw.com/  
+
+# 全国青少年人工智能创新挑战赛
+第五届全国青少年人工智能创新挑战赛
+编程创作与信息学专项赛项目手册   
+http://www.kjtcsw.com/d/file/p/2022/04-26/1dee74bbaf2ccfd8699c59df80d6cb84.pdf
