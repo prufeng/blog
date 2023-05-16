@@ -23,3 +23,17 @@ http://m.kjtcsw.com/
 第五届全国青少年人工智能创新挑战赛
 编程创作与信息学专项赛项目手册   
 http://www.kjtcsw.com/d/file/p/2022/04-26/1dee74bbaf2ccfd8699c59df80d6cb84.pdf
+
+# 全国青少年信息素养大赛报名指南（参赛选手）
+https://ceic.kpcb.org.cn/cms/res_base/com_whatycms_dzxh/upload/article/file/2023_1/3_11/y2dhlf3ebxq9.pdf
+
+# 中国电子学会
+https://www.cie.org.cn/
+https://www.qceit.org.cn/bos/login.html?d=20220912
+
+关于举办2023全国青少年信息素养大赛初赛的通知  
+https://ceic.kpcb.org.cn/cms/sstz/7965.htm
+https://ceic.kpcb.org.cn/cms/
+
+世界机器人大会青少年机器人设计与信息素养大赛  
+https://www.cie.org.cn/36/11093.html
