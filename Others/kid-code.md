@@ -1,8 +1,23 @@
-# 政策资讯
-# 赛事冲刺
-# 招生信息
-# 升学规划
-# 托管陪伴
+# 
+与孩子一起学编程python电子书   
+链接: https://pan.baidu.com/s/1_nGJIOB2fb5evDmG8DFgfg 提取码: 5e23
+https://pan.baidu.com/s/1UHAiq2xdGZ-7OKw9521dWw 提取码: yeus
+https://www.kidscoding8.com/category/scratch-source
+链接: https://pan.baidu.com/s/13v7Z8fXupV2bLoKX1M9XhA 提取码: vcrm
+https://www.kidscoding8.com/wp-content/uploads/2019/04/Python%E7%BC%96%E7%A8%8B%E8%BF%9B%E9%98%B6.pptx
+链接: https://pan.baidu.com/s/1KvPOJCAkE3bv-8GptAL4lA 提取码: xr91
+链接: https://pan.baidu.com/s/1qC3t8R1u1TVjT6GDU9Gvbg 提取码: xp3p
+链接: https://pan.baidu.com/s/1eruhYxqBigEzX756Bbvr8A 提取码: nyw2
+
+https://kidscodes.cn/
+https://kidscodes.cn/9864.html
+https://kidscodes.cn/download
+
+* 政策资讯
+* 赛事冲刺
+* 招生信息
+* 升学规划
+* 托管陪伴
 
 # KET
 https://www.cambridgeenglish.org/
